@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.aspectRatio
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Text
@@ -38,7 +39,7 @@ fun Calculator(
             verticalArrangement = Arrangement.spacedBy(buttonSpacing)
         ) {
             Text(
-                text = state.number1 + (state.operation ?: "") + state.number2,
+                text = state.number1 + (state.operation?.symbol ?: "") + state.number2,
                 textAlign = TextAlign.End,
                 modifier = Modifier
                     .fillMaxWidth()
